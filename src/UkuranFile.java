@@ -11,6 +11,7 @@ public class UkuranFile {
         long ukuranByte = scanner.nextLong();
         // kalau pakai int, jadinya overflow karena sudah melebihi batas int (2.147.483.647 byte)
 
+
         /*
          * Kenapa menggunakan 1024.0, bukan 1024?
          * Jika menggunakan 1024, pembagian dilakukan sebagai bilangan bulat,
@@ -18,6 +19,14 @@ public class UkuranFile {
          * Dengan 1024.0, Java menggunakan pembagian desimal,
          * sehingga hasilnya tetap lebih akurat.
          */
+
+         double ukuranKB = ukuranByte / SATU_KB;
+         double ukuranMB = ukuranKB / SATU_KB;
+         double ukuranGB = ukuranMB / SATU_KB;
+
+         int mbDibulatkan = (int) ukuranMB;
+
+        double selisihPembulatan = ukuranMB - mbDibulatkan;
 
 
 
